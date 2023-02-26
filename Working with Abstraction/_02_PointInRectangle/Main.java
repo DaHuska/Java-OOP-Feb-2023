@@ -22,11 +22,8 @@ public class Main {
 
             Point point = createPoint(pointCoords[0], pointCoords[1]);
 
-            if (isValid(point, rectangle)) {
-                System.out.println(true);
-            } else {
-                System.out.println(false);
-            }
+            boolean isPointValid = pointChecker(point, rectangle);
+            System.out.println(isPointValid);
         }
     }
 
@@ -39,5 +36,9 @@ public class Main {
 
     public static Point createPoint(int x, int y) {
         return new Point(x, y);
+    }
+
+    public static boolean pointChecker(Point point, Rectangle rectangle) {
+        return isValid(point, rectangle);
     }
 }
