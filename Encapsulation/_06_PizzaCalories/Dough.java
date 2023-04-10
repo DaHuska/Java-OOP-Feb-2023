@@ -20,7 +20,7 @@ public class Dough {
                 flourModifier = 1.5;
                 break;
             case "Wholegrain":
-                flourModifier = 1.;
+                flourModifier = 1;
                 break;
         }
 
@@ -32,14 +32,14 @@ public class Dough {
                 techniqueModifier = 1.1;
                 break;
             case "Homemade":
-                techniqueModifier = 1.;
+                techniqueModifier = 1;
                 break;
         }
 
         return (2 * this.weight) * flourModifier * techniqueModifier;
     }
 
-    public void setFlourType(String flourType) {
+    private void setFlourType(String flourType) {
         if (!Validations.validateFlour(flourType)) {
             throw new IllegalArgumentException("Invalid type of dough.");
         }
@@ -47,7 +47,7 @@ public class Dough {
         this.flourType = flourType;
     }
 
-    public void setBakingTechnique(String bakingTechnique) {
+    private void setBakingTechnique(String bakingTechnique) {
         if (!Validations.validateTechnique(bakingTechnique)) {
             throw new IllegalArgumentException("Invalid type of dough.");
         }
@@ -55,7 +55,7 @@ public class Dough {
         this.bakingTechnique = bakingTechnique;
     }
 
-    public void setWeight(double weight) {
+    private void setWeight(double weight) {
         if (!Validations.validateDoughWeight(weight)) {
             throw new IllegalArgumentException("Dough weight should be in the range [1..200].");
         }
