@@ -15,8 +15,8 @@ public class Main {
         String bakingTechnique = doughTokens[2];
         double doughWeight = Double.parseDouble(doughTokens[3]);
 
-        Pizza pizza = null;
-        Dough dough = null;
+        Pizza pizza;
+        Dough dough;
         try {
             pizza = new Pizza(pizzaName, numberOfToppings);
             dough = new Dough(flourType, bakingTechnique, doughWeight);
@@ -32,7 +32,7 @@ public class Main {
             String toppingType = toppingTokens[1];
             double toppingWeight = Double.parseDouble(toppingTokens[2]);
 
-            Topping topping = null;
+            Topping topping;
             try {
                 topping = new Topping(toppingType, toppingWeight);
             } catch (IllegalArgumentException e) {
@@ -47,6 +47,4 @@ public class Main {
 
         System.out.printf("%s - %.2f", pizza.getName(), pizza.getOverallCalories());
     }
-
-    // 91/100
 }
