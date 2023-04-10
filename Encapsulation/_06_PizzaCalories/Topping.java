@@ -9,7 +9,7 @@ public class Topping {
         setWeight(weight);
     }
 
-    public void setToppingType(String toppingType) {
+    private void setToppingType(String toppingType) {
         if (!Validations.validateTopping(toppingType)) {
             throw new IllegalArgumentException(String.format("Cannot place %s on top of your pizza.%n", toppingType));
         }
@@ -17,7 +17,7 @@ public class Topping {
         this.toppingType = toppingType;
     }
 
-    public void setWeight(double weight) {
+    private void setWeight(double weight) {
         if (!Validations.validateToppingWeight(weight)) {
             throw new IllegalArgumentException(String.format("%s weight should be in the range [1..50].%n", this.toppingType));
         }
