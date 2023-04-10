@@ -18,7 +18,7 @@ public class Pizza {
             throw new IllegalArgumentException("Number of toppings should be in range [0..10].");
         }
 
-        this.toppings = new ArrayList<>(numberOfToppings);
+        this.toppings = new ArrayList<>();
     }
 
     private void setName(String name) {
@@ -34,7 +34,6 @@ public class Pizza {
     }
 
     public void addTopping(Topping topping) {
-        // TODO: set toppings to not accept more than its capacity
         this.toppings.add(topping);
     }
 
