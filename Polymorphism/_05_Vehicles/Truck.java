@@ -18,18 +18,6 @@ public class Truck extends Vehicle {
         return getFuelQuantity();
     }
 
-    @Override
-    protected double drive(double distance) {
-        if (!Validators.canDrive(distance, getFuelConsumption(), getFuelQuantity())) {
-            throw new IllegalStateException(String.format("%s needs refueling", this.getClass().getSimpleName()));
-        }
-
-        double fuelConsumed = distance * getFuelConsumption();
-        setFuelQuantity(getFuelQuantity() - fuelConsumed);
-
-        return distance;
-    }
-
     public double getFuelConsumptionIncrease() {
         return fuelConsumptionIncrease;
     }
