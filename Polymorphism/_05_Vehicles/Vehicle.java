@@ -10,7 +10,16 @@ public abstract class Vehicle {
     }
 
     protected abstract double refuel(double refuelQuantity);
-    protected abstract double drive(double distance);
+    protected double drive(double distance) {
+        if (!Validators.canDrive(distance, getFuelConsumption(), getFuelQuantity())) {
+            throw new IllegalStateException(String.format("%s needs refueling", this.getClass().getSimpleName()));
+        }
+
+        double fuelConsumed = distance * getFuelConsumption();
+        setFuelQuantity(getFuelQuantity() - fuelConsumed);
+
+        return distance;
+    }
 
     protected void setFuelQuantity(double fuelQuantity) {
         this.fuelQuantity = fuelQuantity;
