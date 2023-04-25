@@ -68,4 +68,24 @@ public class CustomListTests {
 
         Assert.assertEquals("Tarator", item);
     }
+
+    @Test
+    public void testCustomLinkedListRemoveAtWhenInvalidIndex() {
+        exceptionRule.expect(IllegalArgumentException.class);
+
+        CustomLinkedList<String> customLinkedList = new CustomLinkedList<>();
+        customLinkedList.add("Banica");
+        customLinkedList.removeAt(1);
+    }
+
+    @Test
+    public void testCustomLinkedListRemoveAtWhenIndexValid() {
+        exceptionRule.expect(IllegalArgumentException.class);
+
+        CustomLinkedList<String> customLinkedList = new CustomLinkedList<>();
+        customLinkedList.add("Banica");
+        customLinkedList.removeAt(0);
+
+        customLinkedList.get(0);
+    }
 }
