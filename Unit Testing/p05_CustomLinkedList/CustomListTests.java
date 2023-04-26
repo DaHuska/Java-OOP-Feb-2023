@@ -88,4 +88,24 @@ public class CustomListTests {
 
         customLinkedList.get(0);
     }
+
+    @Test
+    public void testCustomLinkedListRemoveWhenItemNotFound() {
+        CustomLinkedList<String> customLinkedList = new CustomLinkedList<>();
+        customLinkedList.add("Banica");
+
+        int index = customLinkedList.remove("Tarator");
+
+        Assert.assertEquals(-1, index);
+    }
+
+    @Test
+    public void testCustomLinkedListRemoveWhenItemIsValid() {
+        CustomLinkedList<String> customLinkedList = new CustomLinkedList<>();
+        customLinkedList.add("Banica");
+
+        int index = customLinkedList.remove("Banica");
+
+        Assert.assertEquals(0, index);
+    }
 }
